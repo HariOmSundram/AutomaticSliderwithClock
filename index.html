@@ -2,44 +2,87 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Array_Callback</title>
-    <script src="arr_clbck.js" defer></script>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <script src="slider.js"></script>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #slide {
+            max-width: 750px;
+            width: 80%;
+            margin: auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+        #slide:hover {
+            transform: scale(1.02);
+        }
+        .button {
+            font-size: large;
+            padding: 10px 20px;
+            margin: 15px 5px;
+            color: #ffffff;
+            background-color: #1a2b3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #2e4057;
+        }
+        .clock {
+            font-size: 28px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 15px;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .clock:hover {
+            color: #ffcb42;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 203, 66, 0.7);
+        }
+
+        body {
+            margin: 0;
+            height: 96vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
-    <form>
-        <div>
-            Enter element to be Found:
-            <input type="number" name="num" id="num" />
-            <input type="button" value="Find" onclick="setvalue()" />
-        </div>
-        <input type="button" value="Display Array" onclick="display()" />
-        <input type="button" value="Display Array (Ordered)" onclick="displaySorted()" />
-
-        <table border="1" id="resultTable" style="margin-top: 20px; width: 100%;">
-            <thead>
-                <tr>
-                    <th>Operation</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Index of Element</td><td id="index"></td></tr>
-                <tr><td>Array Elements</td><td id="arrayDisplay"></td></tr>
-                <tr><td>Sum of Elements</td><td id="sum"></td></tr>
-                <tr><td>Minimum Element</td><td id="min"></td></tr>
-                <tr><td>Maximum Element</td><td id="max"></td></tr>
-                <tr><td>Average</td><td id="average"></td></tr>
-                <tr><td>Is Array Even</td><td id="isEven"></td></tr>
-                <tr><td>Is Array Odd</td><td id="isOdd"></td></tr>
-                <tr><td>Even Numbers in Array</td><td id="evenNumbers"></td></tr>
-                <tr><td>Odd Numbers in Array</td><td id="oddNumbers"></td></tr>
-            </tbody>
-        </table>
-    </form>
-    <script src="arr_clbck.js"></script>
+    <img src="2.jpeg" id="slide" />
+    <div class="container">
+        <button class="button" onclick="prevImg()">PREVIOUS</button>
+        <button class="button" onclick="nextImg()">NEXT</button>
+    </div>
+    <script src="slider.js"></script>
+    <div class="clock" id="clock"></div>
+    <script src="clock.js"></script>
 </body>
 
 </html>
+
