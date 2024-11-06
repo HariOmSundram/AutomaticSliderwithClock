@@ -1,1 +1,1 @@
-# SliderClock
+# AAutomaticSliderwithClock
